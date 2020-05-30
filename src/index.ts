@@ -20,12 +20,13 @@ const geocoder =
 
 map.addControl(geocoder);
 
-const satelliteImagery = L.layerGroup([layers.ESRIWorldImageryLayer, overlays.StamenTonerOverlay])
+const satelliteImageryLayerGroup = L.layerGroup([layers.ESRIWorldImageryLayer, overlays.StamenTonerOverlay])
+const cloudyLayerGroup = L.layerGroup([overlays.OpenWeatherMapPrecipitationOverlay, overlays.OpenWeatherMapCloudsOverlay])
 
 L.control.layers({
     "OSM FR": layers.OSMFranceLayer,
     "OSM": layers.OSMLayer,
-    "Satellite": satelliteImagery,
+    "Satellite": satelliteImageryLayerGroup,
     "BZH": layers.OSMFranceBzhLayer,
     "Euskadi": layers.OSMFranceEuLayer,
     "Occitan": layers.OSMFranceOcLayer,
@@ -39,5 +40,9 @@ L.control.layers({
     'Relief': overlays.HillshadeOverlay,
     'CyclOSMLite': overlays.cyclosmLiteOverlay,
     'SeaMap': overlays.OpenseamapOverlay,
-    'Toner': overlays.StamenTonerOverlay
+    'Toner': overlays.StamenTonerOverlay,
+    'Pluie/Nuages': cloudyLayerGroup,
+    'Pression Atmo.': overlays.OpenWeatherMapPressureOverlay,
+    'Vent': overlays.OpenWeatherMapWindOverlay,
+    'Température': overlays.OpenWeatherMapTempOverlay
 }).addTo(map)
