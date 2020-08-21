@@ -7,7 +7,7 @@ import { tileLayer } from 'leaflet';
     maxZoom: 20
 }); */
 
-export const TransportOverlay = tileLayer('http://www.openptmap.org/tiles/${z}/${x}/${y}.png', {
+export const TransportOverlay = tileLayer('http://www.openptmap.org/tiles/{z}/{x}/{y}.png', {
     opacity: 0.8
 })
 
