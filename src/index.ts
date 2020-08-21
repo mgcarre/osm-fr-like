@@ -20,7 +20,7 @@ const geocoder =
 
 map.addControl(geocoder);
 
-const satelliteImageryLayerGroup = L.layerGroup([layers.ESRIWorldImageryLayer, overlays.StamenTonerOverlay])
+const satelliteImageryLayerGroup = L.layerGroup([layers.ESRIWorldImageryLayer])
 const cloudyLayerGroup = L.layerGroup([overlays.OpenWeatherMapPrecipitationOverlay, overlays.OpenWeatherMapCloudsOverlay])
 
 L.control.layers({
